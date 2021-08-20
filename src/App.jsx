@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DesktopPage from "@/pages/DesktopPage";
-import MobilePage from "@/pages/MobilePage";
+import DesktopRouter from "@/pages/DesktopRouter";
+import MobileRouter from "@/pages/MobileRouter";
 import { isDesktop } from "@/helpers";
 
 function App() {
     return (
         <Router>
             <Route exact path="/">
-                {isDesktop() ? <DesktopPage /> : <MobilePage />}
+                {isDesktop() ? <DesktopRouter /> : <MobileRouter />}
             </Route>
         </Router>
     );
