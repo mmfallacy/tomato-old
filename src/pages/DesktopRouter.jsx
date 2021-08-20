@@ -1,11 +1,15 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Page } from "@/components";
+import Background from "./desktop/Background";
 
 const DesktopPage = () => {
     const { path } = useRouteMatch();
     return (
         <Switch>
-            <Route path={path}></Route>
+            <Route path={path}>
+                <Page background={Background}></Page>
+            </Route>
         </Switch>
     );
 };
