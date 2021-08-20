@@ -5,4 +5,11 @@ const PageContainer = styled.div`
     position: relative;
 `;
 
-const Page = ({ children }) => <PageContainer>{children}</PageContainer>;
+const Page = ({ children, background: BG }) => (
+    <PageContainer>
+        <BG />
+        {children}
+    </PageContainer>
+);
+
+export default Page;
