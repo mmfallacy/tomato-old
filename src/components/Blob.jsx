@@ -1,4 +1,5 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 const Blob = ({ svgProps, pathProps, className }) => (
     <svg
@@ -20,4 +21,15 @@ const Blob = ({ svgProps, pathProps, className }) => (
     </svg>
 );
 
-export default Blob;
+const StyledBlob = styled(Blob)`
+    position: absolute;
+    ${({ pos }) =>
+        css`
+            top: ${pos?.top ?? "auto"};
+            left: ${pos?.left ?? "auto"};
+            bottom: ${pos?.bottom ?? "auto"};
+            right: ${pos?.right ?? "auto"};
+            transform: rotate(${pos?.angle ?? "auto"});
+        `}
+`;
+export default StyledBlob;
