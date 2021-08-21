@@ -7,7 +7,7 @@ const PageContainer = styled.div`
 
 const Page = ({ children, background: BG }) => (
     <PageContainer>
-        <BG />
+        {BG && <BG />}
         {children}
     </PageContainer>
 );
