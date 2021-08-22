@@ -4,14 +4,16 @@ import DesktopRouter from "@/pages/DesktopRouter";
 import MobileRouter from "@/pages/MobileRouter";
 import { isDesktop } from "@/helpers";
 import GlobalStyle from "./globalStyles";
+import Task from "./components/Task";
 
 function App() {
     return (
         <Router>
             <GlobalStyle />
-            <Route exact path="/">
-                {isDesktop() ? <DesktopRouter /> : <MobileRouter />}
-            </Route>
+            {/* <Route exact path="/"> */}
+            {/* {isDesktop() ? <DesktopRouter /> : <MobileRouter />} */}
+            {/* </Route> */}
+            <Task name="Test" />
         </Router>
     );
 }
