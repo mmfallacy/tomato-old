@@ -1,11 +1,11 @@
 import { Page } from "@/components";
-import Text from "@/components/Text";
 import React from "react";
 import styled from "styled-components";
 import Background from "./Background";
+import { MobileNavbar } from "@/components/Navbar";
+import Text from "@/components/Text";
 
 const HomeContainer = styled(Page)`
-    display: flex;
     padding: 32px;
 `;
 
@@ -17,6 +17,7 @@ const Home = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
+            <MobileNavbar />
         </HomeContainer>
     );
 };
