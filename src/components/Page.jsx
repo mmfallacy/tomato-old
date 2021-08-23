@@ -5,6 +5,8 @@ const PageContainer = styled.div`
     position: relative;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 `;
 
 const Page = ({ children, background: BG, className }) => (
