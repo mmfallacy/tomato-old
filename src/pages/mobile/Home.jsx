@@ -6,7 +6,7 @@ import Background from "./Background";
 
 const HomeContainer = styled(Page)`
     display: flex;
-    padding: 24px;
+    padding: 32px;
 `;
 
 const Title = styled(Text)``;
