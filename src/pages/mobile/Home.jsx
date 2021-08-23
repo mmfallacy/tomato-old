@@ -6,12 +6,17 @@ import Background from "./Background";
 
 const HomeContainer = styled(Page)`
     display: flex;
+    padding: 24px;
 `;
+
+const Title = styled(Text)``;
 
 const Home = () => {
     return (
         <HomeContainer background={Background}>
-            <Text>Tomato</Text>
+            <Title bold size="1.5rem">
+                Tomato
+            </Title>
         </HomeContainer>
     );
 };
