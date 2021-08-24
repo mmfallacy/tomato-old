@@ -1,7 +1,5 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import { Page } from "@/components";
-import Background from "./mobile/Background";
 import Home from "./mobile/Home";
 import TaskList from "./mobile/TaskList";
 
