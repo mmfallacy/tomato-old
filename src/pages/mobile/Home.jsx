@@ -1,7 +1,7 @@
 import { Page } from "@/components";
 import React from "react";
 import styled from "styled-components";
-import Background from "./Background";
+import { MobileBG as Background } from "@/components/Background";
 import { MobileNavbar } from "@/components/Navbar";
 import Text from "@/components/Text";
 
