@@ -4,7 +4,7 @@ import DesktopRouter from "@/pages/DesktopRouter";
 import MobileRouter from "@/pages/MobileRouter";
 import { isDesktop } from "@/helpers";
 import GlobalStyle from "./globalStyles";
-import Task from "./components/Task";
+import Task from "./components/Task/Task";
 
 function App() {
     return (
