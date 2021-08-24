@@ -1,9 +1,9 @@
-import { Page } from "@/components";
 import React from "react";
 import styled from "styled-components";
-import { MobileBG as Background } from "@/components/Background";
-import { MobileNavbar } from "@/components/Navbar";
-import Text from "@/components/Text";
+import { MobileBG as Background } from "@/components";
+import { MobileNavbar } from "@/components";
+import { Page } from "@/components";
+import { Text } from "@/components";
 
 const HomeContainer = styled(Page)`
     padding: 32px;

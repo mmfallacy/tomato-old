@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Page } from "@/components";
-import { DesktopBG as Background } from "@/components/Background";
+import { DesktopBG as Background } from "@/components";
 
 const DesktopPage = () => {
     const { path } = useRouteMatch();
