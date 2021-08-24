@@ -10,9 +10,7 @@ function App() {
     return (
         <Router>
             <GlobalStyle />
-            <Route exact path="/">
-                {isDesktop() ? <DesktopRouter /> : <MobileRouter />}
-            </Route>
+            {isDesktop() ? <DesktopRouter /> : <MobileRouter />}
         </Router>
     );
 }
