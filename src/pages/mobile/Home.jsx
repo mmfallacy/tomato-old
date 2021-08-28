@@ -17,7 +17,7 @@ const Home = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
-            <Task name="Test" />
+            <Task name="This is a long task name enough to trigger the overflow" />
             <MobileNavbar />
         </HomeContainer>
     );
