@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "@/components";
 
-const TaskContainer = styled.div`
+export const TaskContainer = styled.div`
     display: flex;
     position: relative;
     background-color: #ff8282;
@@ -44,7 +44,7 @@ const TaskContainer = styled.div`
     }
 `;
 
-const Task = ({ name, className }) => {
+export const Task = ({ name, className }) => {
     return (
         <TaskContainer className={className}>
             <Text semibold size="16px" color="white">
@@ -53,5 +53,3 @@ const Task = ({ name, className }) => {
         </TaskContainer>
     );
 };
-
-export default Task;

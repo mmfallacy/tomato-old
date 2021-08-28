@@ -1,1 +1,1 @@
-export { default as Task } from "./Task";
+export { Task as Task } from "./Task";
