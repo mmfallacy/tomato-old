@@ -44,9 +44,9 @@ const TaskContainer = styled.div`
     }
 `;
 
-const Task = ({ name }) => {
+const Task = ({ name, className }) => {
     return (
-        <TaskContainer>
+        <TaskContainer className={className}>
             <Text semibold size="16px" color="white">
                 {name}
             </Text>
