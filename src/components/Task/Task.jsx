@@ -8,7 +8,7 @@ const TaskContainer = styled.div`
     background-color: #ff8282;
     max-height: 48px;
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     padding-left: 40px;
     padding-right: 24px;
     border-radius: 24px;
@@ -20,6 +20,7 @@ const TaskContainer = styled.div`
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        line-height: 22px;
     }
 
     &:before {
