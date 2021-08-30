@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MobileBG as Background, Task } from "@/components";
+import { MobileBG as Background, TaskDisplay } from "@/components";
 import { MobileNavbar } from "@/components";
 import { Page } from "@/components";
 import { Text } from "@/components";
@@ -17,7 +17,7 @@ const Home = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
-            <Task name="This is a long task name" />
+            <TaskDisplay name="Active Task Name" after="4/4" />
             <MobileNavbar />
         </HomeContainer>
     );
