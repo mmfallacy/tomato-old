@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "@/components";
+import Variants from "./TaskVariants";
 
 export const TaskContainer = styled.div`
     display: flex;
@@ -42,12 +43,14 @@ export const TaskContainer = styled.div`
             white-space: normal;
         }
     }
+
+    ${({ variant }) => Variants[variant]}
 `;
 
-export const Task = ({ name, className }) => {
+export const Task = ({ name, className, variant }) => {
     return (
-        <TaskContainer className={className}>
-            <Text semibold size="16px" color="white">
+        <TaskContainer className={className} variant={variant}>
+            <Text semibold size="16px">
                 {name}
             </Text>
         </TaskContainer>
