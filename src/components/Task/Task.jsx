@@ -6,7 +6,6 @@ import Variants from "./TaskVariants";
 export const TaskContainer = styled.div`
     display: flex;
     position: relative;
-    background-color: #ff8282;
     max-height: 48px;
     width: 100%;
     padding: 13px;
