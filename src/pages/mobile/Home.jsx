@@ -5,7 +5,9 @@ import { MobileNavbar } from "@/components";
 import { Page } from "@/components";
 import { Text } from "@/components";
 
-const Title = styled(Text)``;
+const Title = styled(Text)`
+    color: #ff8080;
+`;
 
 const HomeContainer = styled(Page)`
     padding: 32px;
@@ -21,7 +23,11 @@ const Home = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
-            <TaskDisplay name="Active Task Name" after="4/4" />
+            <TaskDisplay
+                name="Finished Task Name"
+                after="4/4"
+                variant="finished"
+            />
             <MobileNavbar />
         </HomeContainer>
     );
