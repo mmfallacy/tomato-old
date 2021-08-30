@@ -5,11 +5,15 @@ import { MobileNavbar } from "@/components";
 import { Page } from "@/components";
 import { Text } from "@/components";
 
+const Title = styled(Text)``;
+
 const HomeContainer = styled(Page)`
     padding: 32px;
-`;
 
-const Title = styled(Text)``;
+    ${Title} {
+        margin-bottom: 48px;
+    }
+`;
 
 const Home = () => {
     return (
