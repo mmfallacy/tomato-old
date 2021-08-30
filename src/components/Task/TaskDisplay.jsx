@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { TaskContainer } from "./Task";
-import { Text } from "@/components";
+import { Task } from "./Task";
 
-const TaskDisplayContainer = styled(TaskContainer)`
+const TaskDisplay = styled(Task)`
     &:after {
         content: "${({ after }) => after}";
         color: white;
@@ -12,13 +11,4 @@ const TaskDisplayContainer = styled(TaskContainer)`
     }
 `;
 
-const TaskDisplay = ({ name, className, after }) => {
-    return (
-        <TaskDisplayContainer className={className} after={after}>
-            <Text semibold size="16px" color="white">
-                {name}
-            </Text>
-        </TaskDisplayContainer>
-    );
-};
 export default TaskDisplay;
