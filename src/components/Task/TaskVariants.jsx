@@ -7,9 +7,19 @@ const FinishedTask = css`
     text-decoration: line-through;
 `;
 
+const UnfinishedTask = css`
+    background-color: #fbbcbc;
+    color: white;
+`;
+
+const ActiveTask = css`
+    background-color: #ff8282;
+    color: white;
+`;
+
 const TaskVariants = {
     finished: FinishedTask,
-    active: null,
-    unfinished: null,
+    active: ActiveTask,
+    unfinished: UnfinishedTask,
 };
 export default TaskVariants;
