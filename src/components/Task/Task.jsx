@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "@/components";
 import Variants from "./TaskVariants";
+import PropTypes from "prop-types";
 
 export const TaskContainer = styled.div`
     display: flex;
@@ -54,4 +55,14 @@ export const Task = ({ name, className, variant }) => {
             </Text>
         </TaskContainer>
     );
+};
+
+Task.propTypes = {
+    name: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    variant: PropTypes.oneOf(["active", "unfinished", "finished"]),
+};
+
+Task.defaultProps = {
+    variant: "active",
 };
