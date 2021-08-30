@@ -23,11 +23,7 @@ const Home = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
-            <TaskDisplay
-                name="Finished Task Name"
-                after="4/4"
-                variant="finished"
-            />
+            <TaskDisplay name="Task Name" after="4/4" variant="active" />
             <MobileNavbar />
         </HomeContainer>
     );
