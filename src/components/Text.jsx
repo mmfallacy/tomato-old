@@ -14,7 +14,7 @@ Text.defaultProps = {
     bold: false,
     semibold: false,
     size: "1rem",
-    color: "#FF8080",
+    color: "inherit",
 };
 Text.propTypes = {
     bold: PropTypes.bool,
