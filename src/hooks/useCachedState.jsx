@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 /**
  * Custom React Hook that retrieves cached state if available and updates cache on state change.
@@ -14,7 +14,6 @@ const useCachedState = (name, defaultValue) => {
      */
     useEffect(() => {
         const item = localStorage.getItem(name);
-        console.log(item);
         if (item) setter(JSON.parse(item));
         else localStorage.setItem(name, JSON.stringify(defaultValue));
     }, []);
@@ -24,7 +23,6 @@ const useCachedState = (name, defaultValue) => {
      */
     useEffect(() => {
         localStorage.setItem(name, JSON.stringify(state));
-        console.log(name, defaultValue);
     }, [state]);
 
     return [state, setter];
