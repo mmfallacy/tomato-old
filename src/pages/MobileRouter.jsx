@@ -8,7 +8,7 @@ const MobilePage = () => {
 
     return (
         <Switch>
-            <Route path={`${path}/tasks`}>
+            <Route path={`/tasks`}>
                 <TaskList />
             </Route>
             <Route path={path}>
