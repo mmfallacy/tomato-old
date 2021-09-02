@@ -4,17 +4,13 @@ import {
     MobileBG as Background,
     MobileNavbar,
     Page,
-    Text,
+    Title,
     Task,
 } from "@/components";
 import { useCachedState } from "@/hooks";
 
 const PageContainer = styled(Page)`
     padding: 32px;
-`;
-
-const Title = styled(Text)`
-    color: #ff8080;
 `;
 
 const TaskListContainer = styled.div`
@@ -34,6 +30,7 @@ const TaskList = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
+
             <TaskListContainer>
                 {tasks.map((el, i) => (
                     <Task key={i} {...el} />

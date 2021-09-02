@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { MobileBG as Background, TaskDisplay } from "@/components";
-import { MobileNavbar } from "@/components";
-import { Page } from "@/components";
-import { Text } from "@/components";
-
-const Title = styled(Text)`
-    color: #ff8080;
-`;
+import {
+    MobileBG as Background,
+    TaskDisplay,
+    Title,
+    MobileNavbar,
+    Page,
+    Text,
+} from "@/components";
 
 const HomeContainer = styled(Page)`
     padding: 32px;
