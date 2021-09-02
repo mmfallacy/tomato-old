@@ -7,8 +7,10 @@ import {
     Title,
     Text,
     Task,
+    Action,
 } from "@/components";
 import { useCachedState } from "@/hooks";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Header = styled(Text)`
     font-size: 24px;
@@ -49,6 +51,10 @@ const TaskList = () => {
                 ))}
             </TaskListContainer>
             <MobileNavbar />
+            <Action
+                icon={AiOutlinePlus}
+                action={() => console.log("clicked")}
+            />
         </PageContainer>
     );
 };
