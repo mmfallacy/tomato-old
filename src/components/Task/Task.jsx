@@ -47,7 +47,7 @@ export const TaskContainer = styled.div`
     ${({ variant }) => Variants[variant]}
 `;
 
-export const Task = ({ name, className, variant }) => {
+const _Task = ({ name, className, variant }) => {
     return (
         <TaskContainer className={className} variant={variant}>
             <Text semibold size="16px">
@@ -56,6 +56,8 @@ export const Task = ({ name, className, variant }) => {
         </TaskContainer>
     );
 };
+
+export const Task = styled(_Task)``;
 
 Task.propTypes = {
     name: PropTypes.string.isRequired,
