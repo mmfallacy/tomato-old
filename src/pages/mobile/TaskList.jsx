@@ -5,12 +5,24 @@ import {
     MobileNavbar,
     Page,
     Title,
+    Text,
     Task,
 } from "@/components";
 import { useCachedState } from "@/hooks";
 
+const Header = styled(Text)`
+    font-size: 24px;
+    color: #ff8080;
+    width: 100%;
+    text-align: center;
+`;
+
 const PageContainer = styled(Page)`
     padding: 32px;
+
+    ${Title}, ${Header} {
+        margin-bottom: 48px;
+    }
 `;
 
 const TaskListContainer = styled.div`
@@ -30,7 +42,7 @@ const TaskList = () => {
             <Title bold size="1.5rem">
                 Tomato
             </Title>
-
+            <Header>Tasks</Header>
             <TaskListContainer>
                 {tasks.map((el, i) => (
                     <Task key={i} {...el} />
