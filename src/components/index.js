@@ -8,3 +8,4 @@ export * from "./Navbar";
 export * from "./Background";
 export * from "./Text";
 export * from "./Task";
+export * from "./Timer";
