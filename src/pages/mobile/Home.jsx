@@ -6,7 +6,6 @@ import {
     Title,
     MobileNavbar,
     Page,
-    Text,
 } from "@/components";
 
 const HomeContainer = styled(Page)`
