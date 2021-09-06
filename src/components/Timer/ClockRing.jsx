@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const _ClockRingShadow = ({ className }) => (
+const _ClockRingShadow = (props) => (
     <svg
-        className={className}
+        {...props}
         width="272"
         height="272"
         viewBox="0 0 272 272"
@@ -14,9 +14,9 @@ const _ClockRingShadow = ({ className }) => (
     </svg>
 );
 
-const _ClockRing = ({ className }) => (
+const _ClockRing = (props) => (
     <svg
-        className={className}
+        {...props}
         width="240"
         height="240"
         viewBox="0 0 240 240"
@@ -47,8 +47,8 @@ const ClockRingBobContainer = styled.div`
     }
 `;
 
-const _ClockRingHead = ({ className }) => (
-    <ClockRingBobContainer className={className}>
+const _ClockRingHead = (props) => (
+    <ClockRingBobContainer {...props}>
         <ClockRingBob />
     </ClockRingBobContainer>
 );
