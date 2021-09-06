@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { ClockRing, ClockRingShadow, ClockRingHead } from "./ClockRing";
+import ClockText from "./ClockText";
 
-// TODO: Refactor timer logic to use setTimeout instead of setInterval for more fluid animation and simpler implementation
 // TODO: Lift state to Timer component
-// FIXME: Refactor timer animation code with readability in mind
 
 const ClockContainer = styled.div`
     height: 100%;
@@ -13,68 +12,72 @@ const ClockContainer = styled.div`
     font-size: 8px;
 
     ${ClockRing} {
-        --circumference: calc(${2 * Math.PI} * 50% - 2em);
+        --circumference: calc(${2 * Math.PI} * 50% - 3em);
         position: absolute;
         top: 0;
         left: 0;
     }
 
     ${ClockRingShadow} {
-        --circumference: calc(${2 * Math.PI} * 50% - 6em);
         position: absolute;
         top: -2em;
         left: -2em;
     }
 
-    ${ClockRingShadow}, ${ClockRing} {
-        stroke-dasharray: var(--circumference), var(--circumference);
-
-        transition: stroke-dashoffset 0.1s linear;
-        stroke-dashoffset: calc(
-            var(--circumference) *
-                ${({ percent, $fill }) => ($fill ? percent : 1 + percent)}
-        );
-        transform: rotateZ(-90deg)
-            rotateX(${({ $fill }) => ($fill ? 180 : 0)}deg);
+    ${ClockText} {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -56%);
     }
 
-    ${ClockRingHead} {
-        transition: transform 1.1s linear;
-        ${({ percent }) => `transform: rotateZ(${360 * percent}deg)`}
+    ${ClockRing} {
+        stroke-dasharray: var(--circumference), var(--circumference);
+        transform: rotateZ(-90deg) rotateX(-180deg);
+    }
+
+    button {
+        position: absolute;
+        bottom: 10px;
+        padding: 4px;
     }
 `;
 
-const Clock = ({ className, fill = true }) => {
-    const [percent, setPercent] = React.useState(1);
-    const [time, setTime] = React.useState(120);
+const Clock = ({ className, fill = true, duration = 120000 }) => {
+    const [active, setActive] = React.useState(false);
+    const [time, setTime] = React.useState(duration);
 
     const intervalRef = React.useRef(null);
 
-    const onStart = () => {
-        console.log("Start");
-        setTime((t) => {
-            intervalRef.current = setInterval(onInterval, 1000);
-            return 0;
-        });
-    };
+    const onInterval = React.useCallback(() => {
+        setTime((t) => t - 10);
+    }, []);
 
-    const onInterval = React.useCallback(() => setTime((t) => t + 1), []);
-    const onEnd = () => {
-        console.log("End");
-        clearInterval(intervalRef.current);
+    const onStart = () => {
+        setActive((s) => !s);
     };
 
     React.useEffect(() => {
-        setPercent(time / 120);
-        if (time === 120) onEnd();
-        console.log(time);
-    }, [time]);
+        if (!active) return clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(onInterval, 10);
+    }, [active]);
 
     return (
-        <ClockContainer className={className} percent={percent} $fill={fill}>
-            <ClockRing />
+        <ClockContainer className={className} $fill={fill} active={active}>
+            <ClockText time={time}></ClockText>
+            <ClockRing
+                style={{
+                    strokeDashoffset: `calc(
+            var(--circumference) * ${1 - time / duration}`,
+                }}
+            />
             <ClockRingShadow />
-            <ClockRingHead />
+            <ClockRingHead
+                style={{
+                    transform: `rotateZ(-${360 * (time / duration)}deg)`,
+                }}
+                hide={!active}
+            />
             <button onClick={() => onStart()}>Start</button>
         </ClockContainer>
     );
