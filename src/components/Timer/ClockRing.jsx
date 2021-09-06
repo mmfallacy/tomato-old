@@ -28,8 +28,8 @@ const _ClockRing = (props) => (
 );
 
 const ClockRingBob = styled.div`
-    height: 3em;
-    width: 3em;
+    height: 2.5em;
+    width: 2.5em;
     background-color: #ff8080;
     border-radius: 300px;
 `;
@@ -42,8 +42,15 @@ const ClockRingBobContainer = styled.div`
     ${ClockRingBob} {
         position: absolute;
         left: 50%;
-        top: -1em;
+        top: -0.75em;
         transform: translateX(-50%);
+
+        ${({ hide }) =>
+            hide &&
+            css`
+                height: 0px;
+                width: 0px;
+            `}
     }
 `;
 
