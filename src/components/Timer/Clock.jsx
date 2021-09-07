@@ -43,7 +43,7 @@ const ClockContainer = styled.div`
     }
 `;
 
-const Clock = ({ className, fill = true, duration = 120000 }) => {
+const Clock = ({ className, fill = true, duration = 10000 }) => {
     const [active, setActive] = React.useState(false);
     const [time, setTime] = React.useState(duration);
 
@@ -61,6 +61,11 @@ const Clock = ({ className, fill = true, duration = 120000 }) => {
         if (!active) return clearInterval(intervalRef.current);
         intervalRef.current = setInterval(onInterval, 10);
     }, [active]);
+
+    React.useEffect(() => {
+        if (time > 0) return;
+        setActive(false);
+    }, [time]);
 
     return (
         <ClockContainer className={className} $fill={fill} active={active}>
