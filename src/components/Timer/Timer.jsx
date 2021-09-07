@@ -2,14 +2,7 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import Clock from "./Clock";
 
-const TimerContainer = styled.div`
-    position: relative;
-    button {
-        position: absolute;
-        bottom: 10px;
-        padding: 4px;
-    }
-`;
+const TimerContainer = styled.div``;
 
 const _Timer = ({ className, duration = 10000 }) => {
     /** Timer States */
@@ -48,6 +41,4 @@ const _Timer = ({ className, duration = 10000 }) => {
     );
 };
 
-const Timer = styled(_Timer)``;
-
-export default Timer;
+export default styled(_Timer)``;
