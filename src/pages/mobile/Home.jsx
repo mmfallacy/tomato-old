@@ -7,6 +7,7 @@ import {
     MobileNavbar,
     Page,
     Timer,
+    TimerControl,
 } from "@/components";
 
 const HomeContainer = styled(Page)`
@@ -19,9 +20,13 @@ const HomeContainer = styled(Page)`
     }
 
     ${Timer} {
-        margin-top: 80px;
+        margin-top: 116px;
         height: 240px;
         width: 240px;
+    }
+
+    ${TimerControl} {
+        margin-top: 116px;
     }
 `;
 
