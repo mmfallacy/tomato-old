@@ -19,7 +19,7 @@ const HomeContainer = styled(Page)`
     }
 
     ${Timer} {
-        margin-top: 48px;
+        margin-top: 80px;
         height: 240px;
         width: 240px;
     }
