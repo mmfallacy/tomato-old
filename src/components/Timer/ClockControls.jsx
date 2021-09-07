@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { BiPause, BiPlay, BiRevision } from "react-icons/bi";
 
 const StyledCCBase = styled.button`
@@ -20,6 +20,20 @@ const StyledCCBase = styled.button`
             fill: white;
         }
     }
+
+    ${({ minor }) =>
+        minor &&
+        css`
+            height: 60%;
+            width: 60%;
+            position: absolute;
+            left: 130%;
+
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+        `}
 
     transition: transform 0.2s ease-in;
 
