@@ -1,8 +1,26 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import Clock from "./Clock";
+import { CCPause, CCStop, CCStart } from "./ClockControls";
 
-const TimerContainer = styled.div``;
+const ControlContainer = styled.div`
+    height: 56px;
+    width: 56px;
+
+    position: absolute;
+    top: 100%;
+`;
+
+const TimerContainer = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ${ControlContainer} {
+        margin-top: 80px;
+    }
+`;
 
 const _Timer = ({ className, duration = 10000 }) => {
     /** Timer States */
@@ -35,8 +53,11 @@ const _Timer = ({ className, duration = 10000 }) => {
     return (
         <TimerContainer className={className}>
             <Clock time={time} duration={duration} active={active} />
-
-            <button onClick={() => onStart()}>Start</button>
+            <ControlContainer>
+                <CCPause />
+                <CCStart />
+                <CCStop />
+            </ControlContainer>
         </TimerContainer>
     );
 };
