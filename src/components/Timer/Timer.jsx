@@ -19,10 +19,6 @@ const TimerContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    ${ControlContainer} {
-        margin-top: 80px;
-    }
 `;
 
 const _Timer = ({ className, duration = 10000 }) => {
@@ -75,4 +71,5 @@ const _Timer = ({ className, duration = 10000 }) => {
     );
 };
 
-export default styled(_Timer)``;
+export const Timer = styled(_Timer)``;
+export const TimerControl = ControlContainer;
