@@ -45,11 +45,12 @@ const ClockRingBobContainer = styled.div`
         top: -0.75em;
         transform: translateX(-50%);
 
+        transition: opacity 0.07s linear;
+
         ${({ hide }) =>
             hide &&
             css`
-                height: 0px;
-                width: 0px;
+                opacity: 0;
             `}
     }
 `;
