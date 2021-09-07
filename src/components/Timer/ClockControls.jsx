@@ -4,8 +4,8 @@ import { BiPause, BiPlay, BiRevision } from "react-icons/bi";
 
 const StyledCCBase = styled.button`
     background-color: #ff8080;
-    height: 56px;
-    width: 56px;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,8 +14,8 @@ const StyledCCBase = styled.button`
     cursor: pointer;
 
     svg {
-        height: 32px;
-        width: 32px;
+        height: 60%;
+        width: 60%;
         path {
             fill: white;
         }
@@ -43,8 +43,8 @@ const CCBase = styled(_CCBase)``;
 export const CCPause = styled(CCBase).attrs((_) => ({ icon: BiPause }))``;
 export const CCStop = styled(CCBase).attrs((_) => ({ icon: BiRevision }))`
     svg {
-        height: 24px;
-        width: 24px;
+        height: 42%;
+        width: 42%;
     }
 `;
 export const CCStart = styled(CCBase).attrs((_) => ({ icon: BiPlay }))``;
