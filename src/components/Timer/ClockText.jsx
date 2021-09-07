@@ -15,6 +15,4 @@ const _ClockText = ({ className, time, rest }) => (
     </StyledClockText>
 );
 
-const ClockText = styled(_ClockText)``;
-
-export default ClockText;
+export default styled(_ClockText)``;
