@@ -58,4 +58,4 @@ const Clock = ({ className, time, duration, active }) => {
     );
 };
 
-export default Clock;
+export default styled(Clock)``;
