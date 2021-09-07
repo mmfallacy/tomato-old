@@ -6,6 +6,9 @@ import { CCPause, CCStop, CCStart } from "./ClockControls";
 const ControlContainer = styled.div`
     height: 56px;
     width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position: absolute;
     top: 100%;
@@ -33,8 +36,11 @@ const _Timer = ({ className, duration = 10000 }) => {
         setTime((t) => t - 10);
     }, []);
 
-    const onStart = () => {
-        setActive((s) => !s);
+    const onStart = () => setActive(true);
+    const onPause = () => setActive(false);
+    const onStop = () => {
+        setActive(false);
+        setTime(duration);
     };
 
     /** Timer Effects */
@@ -54,9 +60,16 @@ const _Timer = ({ className, duration = 10000 }) => {
         <TimerContainer className={className}>
             <Clock time={time} duration={duration} active={active} />
             <ControlContainer>
-                <CCPause />
-                <CCStart />
-                <CCStop />
+                {active ? (
+                    <CCPause onClick={onPause} />
+                ) : time > 0 ? (
+                    <>
+                        <CCStart onClick={onStart} />
+                        <CCStop onClick={onStop} minor />
+                    </>
+                ) : (
+                    <CCStop onClick={onStop} />
+                )}
             </ControlContainer>
         </TimerContainer>
     );
