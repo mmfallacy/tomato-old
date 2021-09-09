@@ -8,6 +8,7 @@ import {
     Text,
     Task,
     Action,
+    ContextMenu,
 } from "@/components";
 import { useCachedState } from "@/hooks";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -54,6 +55,19 @@ const TaskList = () => {
             <Action
                 icon={AiOutlinePlus}
                 action={() => console.log("clicked")}
+            />
+            <ContextMenu
+                options={[
+                    {
+                        name: "This is a context option",
+                        action: () => console.log("clicked"),
+                    },
+                    {
+                        name: "This is a context option 2",
+                        action: () => console.log("clicked 2"),
+                        minor: true,
+                    },
+                ]}
             />
         </PageContainer>
     );
