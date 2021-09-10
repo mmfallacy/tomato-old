@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Text } from "@/components";
 
 const StyledOptions = styled.button`
@@ -14,13 +14,23 @@ const StyledOptions = styled.button`
 const ContextMenuContainer = styled.div`
     background-color: white;
     position: fixed;
-    bottom: 0;
     left: 0;
     width: 100%;
     padding: 32px;
     box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
+
+    transition: bottom 0.5s ease-out;
+
+    ${({ active }) =>
+        active
+            ? css`
+                  bottom: 0%;
+              `
+            : css`
+                  bottom: -100%;
+              `}
 
     ${StyledOptions}:not(:last-child) {
         margin-bottom: 16px;
@@ -36,8 +46,8 @@ const ContextMenuOptions = ({ name, ...rest }) => (
 const ContextMenu = ({ options = [], ...props }) => {
     return (
         <ContextMenuContainer {...props}>
-            {options.map((el, i) => (
-                <ContextMenuOptions key={i} {...el} />
+            {options.map(({ action, ...el }, i) => (
+                <ContextMenuOptions key={i} onClick={action} {...el} />
             ))}
         </ContextMenuContainer>
     );
