@@ -10,7 +10,7 @@ import {
     Action,
     ContextMenu,
 } from "@/components";
-import { useCachedState } from "@/hooks";
+import { useCachedState, useOverlay } from "@/hooks";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const Header = styled(Text)`
@@ -40,6 +40,23 @@ const TaskListContainer = styled.div`
 
 const TaskList = () => {
     const [tasks, setTasks] = useCachedState("tasks", []);
+    const [ContextMenuWithOverlay, active, setActive] = useOverlay(
+        (active) => (
+            <ContextMenu
+                active={active}
+                options={[
+                    {
+                        name: "This is a context option",
+                    },
+                    {
+                        name: "This is a context option 2",
+                        minor: true,
+                    },
+                ]}
+            />
+        ),
+        false
+    );
     return (
         <PageContainer background={Background}>
             <Title bold size="1.5rem">
@@ -52,23 +69,8 @@ const TaskList = () => {
                 ))}
             </TaskListContainer>
             <MobileNavbar />
-            <Action
-                icon={AiOutlinePlus}
-                action={() => console.log("clicked")}
-            />
-            <ContextMenu
-                options={[
-                    {
-                        name: "This is a context option",
-                        action: () => console.log("clicked"),
-                    },
-                    {
-                        name: "This is a context option 2",
-                        action: () => console.log("clicked 2"),
-                        minor: true,
-                    },
-                ]}
-            />
+            <Action icon={AiOutlinePlus} action={() => setActive(true)} />
+            <ContextMenuWithOverlay />
         </PageContainer>
     );
 };
